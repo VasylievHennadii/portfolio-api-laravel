@@ -1,6 +1,8 @@
 <?php
 
+use App\Admin\Controllers\ExperienceController;
 use Illuminate\Routing\Router;
+
 
 Admin::routes();
 
@@ -12,5 +14,6 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
+    $router->resource('/experiences', ExperienceController::class);
 
 });
