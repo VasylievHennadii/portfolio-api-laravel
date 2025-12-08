@@ -30,7 +30,7 @@ class TechnologyController extends AdminController
 
         $grid->column('id', __('ID'))->sortable();
         $grid->column('title', __('Title'))->sortable();
-        $grid->column('icon', __('Icon'))->image();
+        $grid->column('icon', __('Icon'))->image('/storage/');
 
         return $grid;
     }
@@ -47,7 +47,7 @@ class TechnologyController extends AdminController
 
         $show->field('id', __('ID'));
         $show->field('title', __('Title'));
-        $show->field('icon', __('Icon'))->image();
+        $show->field('icon', __('Icon'))->image('/storage/');
 
         return $show;
     }
