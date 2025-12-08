@@ -34,6 +34,13 @@ class ExperienceController extends AdminController
         $grid->column('date_to', __('Date To'))->sortable()->date();
         $grid->column('company_name', __('Company'))->sortable();
 
+        $grid->technologies()->display(function ($technologies) {
+            $technologies = array_map(function ($technology) {
+                return "<span class='label label-success'>{$technology['title']}</span>";
+            }, $technologies);
+            return join('&nbsp;', $technologies);
+        });
+
         return $grid;
     }
 
