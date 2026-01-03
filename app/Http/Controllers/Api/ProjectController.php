@@ -13,4 +13,10 @@ class ProjectController extends Controller
     {
         return ProjectResource::collection(Project::all());
     }
+
+    public function show(Project $project)
+    {
+        return new ProjectResource($project);
+    }
+
 }
