@@ -22,6 +22,7 @@ class ExperienceResource extends JsonResource
             'date_from' => Carbon::parse($this->date_from)->translatedFormat('F Y'),
             'date_to' => Carbon::parse($this->date_to)->translatedFormat('F Y'),
             'company_name' => $this->company_name,
+            'technologies' => TechnologyResource::collection($this->technologies),
         ];
     }
 }
