@@ -4,6 +4,7 @@
 use App\Http\Controllers\Api\ExperienceController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\TechnologyController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::apiResource('/projects', ProjectController::class)
@@ -17,3 +18,7 @@ Route::apiResource('/experiences', ExperienceController::class)
 Route::apiResource('/technologies', TechnologyController::class)
     ->only(['index', 'show'])
     ->parameter('technologies', 'technology');
+
+Route::apiResource('/users', UserController::class)
+    ->only(['index', 'show'])
+    ->parameter('users', 'user');
