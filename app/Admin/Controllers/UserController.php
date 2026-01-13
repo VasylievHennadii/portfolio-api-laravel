@@ -33,6 +33,11 @@ class UserController extends AdminController
         $grid->column('position', __('Position'))->sortable();
         $grid->column('description', __('Description'))->sortable();
         $grid->column('interests', __('Interests'))->sortable();
+        $grid->column('image', __('Foto'))->image('/storage/');
+        $grid->column('linkedin', __('linkedin'));
+        $grid->column('xing', __('xing'));
+        $grid->column('gitlab', __('gitlab'));
+        $grid->column('github', __('github'));
 
         return $grid;
     }
@@ -53,6 +58,11 @@ class UserController extends AdminController
         $show->field('position', __('Position'));
         $show->field('description', __('Description'));
         $show->field('interests', __('Interests'));
+        $show->field('image', __('Foto'))->image('/storage/');
+        $show->field('linkedin', __('linkedin'));
+        $show->field('xing', __('xing'));
+        $show->field('gitlab', __('gitlab'));
+        $show->field('github', __('github'));
 
         return $show;
     }
@@ -72,6 +82,11 @@ class UserController extends AdminController
         $form->text('position', __('Position'));
         $form->textarea('description', __('Description'));
         $form->textarea('interests', __('Interests'));
+        $form->image('image', __('Foto'));
+        $form->text('linkedin', __('linkedin'));
+        $form->text('xing', __('xing'));
+        $form->text('gitlab', __('gitlab'));
+        $form->text('github', __('github'));
 
         return $form;
     }
